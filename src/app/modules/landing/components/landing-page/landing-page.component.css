@@ -1,0 +1,12 @@
+.background-img-main {
+  background-image: url('../../../../../assets/background-home-page.png');
+  background-size: cover;
+  background-position: center;
+
+  margin-top: 2rem;
+  position: relative;
+  padding-top: 100px;
+  min-height: 100vh;
+  z-index: -1;
+  /* Establece la altura mínima de la imagen al alto de la ventana */
+}

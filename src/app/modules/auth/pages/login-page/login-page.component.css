@@ -1,0 +1,8 @@
+.background-image {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh; /* Establece la altura mínima de la imagen al alto de la ventana */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_1280.jpg");
+}

@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'shared-navbar',
   templateUrl: './navbar.component.html',
-  styles: [
-  ]
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  @Input()
+  public userLoggedIn: boolean = false;
+
+
 
 }

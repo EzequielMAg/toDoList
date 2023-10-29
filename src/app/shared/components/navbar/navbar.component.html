@@ -1,1 +1,23 @@
-<p>navbar works!</p>
+<header class="nav-bar">
+
+  <div>
+    <a routerLink="/home" class="page-logo">ToDoList</a>
+  </div>
+
+  <nav class="nav-links">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a href="#">Acerca de</a>
+    <a href="#">Contacto</a>
+
+    <ng-container *ngIf="!userLoggedIn; else isLoggedIn">
+      <a routerLink="/auth/login" routerLinkActive="active">Ingresar</a>
+      <a routerLink="/auth/register" routerLinkActive="active">Registrarse</a>
+    </ng-container>
+
+    <ng-template #isLoggedIn>
+      <a href="#">Mis notas</a>
+      <a href="">LogOut</a>
+    </ng-template>
+
+  </nav>
+</header>

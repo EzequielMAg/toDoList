@@ -13,7 +13,7 @@ export class ApiService {
   //  GET, POST, PUT, PATCH, DELETE, pero NO se va a subscribir al observable. Lo va a retornar.
   //! Y el subscribe se va a realizar en otra capa, es decir en otro servicio.
 
-  // URL base de nuestro servidor de jsonServer
+  // URL base para conectarnos a nuestro servidor de jsonServer
   private baseURL = "http://localhost:3000";
 
   /*//* INYECCION DE DEPENDENCIA PARA OBTENER UNA INSTANCIA DE HttpClient.

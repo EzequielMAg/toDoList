@@ -4,7 +4,8 @@ import { Error404Component } from './shared/components/error404/error404.compone
 
 const routes: Routes = [
   {
-    path: 'landing',
+    /* path: 'landing', */
+    path: 'home',
     loadChildren: () => import('./modules/landing/landing.module').then( m => m.LandingModule )
   },
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'landing',
+    /* redirectTo: 'landing', */
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
