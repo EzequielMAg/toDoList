@@ -12,6 +12,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
   imports: [
     CommonModule,
     LandingRoutingModule
+  ],
+  exports: [
+    LandingPageComponent
   ]
 })
 export class LandingModule { }

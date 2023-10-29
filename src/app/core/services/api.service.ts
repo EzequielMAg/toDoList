@@ -7,15 +7,19 @@ import { Observable, catchError, map, of } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+
   //! IMPORTANTE: Este servicio ApiService se va a encargar de NADA MAS de devolver el Observable.
   //  Osea si, se conecta con la API FAKE json server, para realizar las diferentes consultas:
   //  GET, POST, PUT, PATCH, DELETE, pero NO se va a subscribir al observable. Lo va a retornar.
   //! Y el subscribe se va a realizar en otra capa, es decir en otro servicio.
 
+  // URL base de nuestro servidor de jsonServer
   private baseURL = "http://localhost:3000";
 
   /*//* INYECCION DE DEPENDENCIA PARA OBTENER UNA INSTANCIA DE HttpClient.
-        Asi realizar/recibir solicitudes/respuestas HTTP */
+        Asi realizar/recibir solicitudes/respuestas HTTP
+    //! Recordar que hay que importar el modulo HttpClientModule en el modulo prinicipal AppModule
+        Lo importamos ahi porque lo vamos a usar en toda la aplicacion :v */
   constructor(private http: HttpClient) { }
 
 
@@ -105,7 +109,7 @@ export class ApiService {
   //#endregion
 
 
-  public addTasks(task: Task): Observable<Task> {
+  public addTask(task: Task): Observable<Task> {
     return this.http.post<Task>(`${this.baseURL}/tasks/${task.id}`, task);
   }
 
