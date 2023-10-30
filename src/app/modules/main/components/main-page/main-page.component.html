@@ -1,1 +1,47 @@
-<p>main-page works!</p>
+<shared-navbar [userLoggedIn]="true"></shared-navbar>
+
+<div class="row fix-width">
+
+  <div class="col-8">
+    <div class="reduce centralize">
+      <app-tasks-view [tasks]="tasks" (taskToDelete)="deleteTask($event)" (taskToUpdate)="openEditTaskDialog($event)"></app-tasks-view>
+    </div>
+  </div>
+
+  <div class="col-4 ">
+    <div class="reduce">
+      <app-add-task (onNewTask)="addTask($event)"></app-add-task>
+    </div>
+  </div>
+
+  <div *ngIf="isPopupVisible" class="popup-overlay">
+    <ng-container *ngTemplateOutlet="editTaskDialog"></ng-container>
+  </div>
+
+</div>
+
+
+<ng-template #editTaskDialog>
+  <h2 mat-dialog-title class="custom-dialog-title">Editar Tarea</h2>
+  <div mat-dialog-content>
+    <form (ngSubmit)="updateTask()" class="custom-form">
+      <!-- Tu formulario de edición de tareas aquí -->
+      <div class="form-field">
+        <label for="priority">Prioridad:</label>
+        <input type="number" id="priority" name="priority" [value]="editTask.priority" [(ngModel)]="editTask.priority" required>
+      </div>
+
+      <div class="form-field">
+        <label for="description">Descripción:</label>
+        <input id="text" name="description" [value]="editTask.description" [(ngModel)]="editTask.description" required>
+      </div>
+
+      <!-- Otros campos del formulario si es necesario -->
+
+      <button type="submit" class="custom-button">Guardar Cambios</button>
+    </form>
+    <div mat-dialog-actions>
+      <button mat-button (click)="closeDialog()" class="custom-button mx-set px-5" >Cancelar</button>
+    </div>
+  </div>
+</ng-template>

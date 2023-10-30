@@ -2,21 +2,27 @@
   "tasks": [
     {
       "id": 1,
-      "priority": 1,
-      "description": "Tarea 1 asdasd",
+      "priority": 4,
+      "description": "Comprar para cenar",
       "done": false
     },
     {
-      "priority": 3,
-      "description": "Tarea 2 asdasd",
+      "priority": 5,
+      "description": "Estudiar para parcial Lab IV",
       "done": false,
       "id": 2
     },
     {
       "priority": 2,
-      "description": "Tarea 2 asdasd",
+      "description": "Preparar presentacion de Legislacion",
       "done": false,
       "id": 3
+    },
+    {
+      "priority": 5,
+      "description": "Meter ropas al lavarropas urgenteee!",
+      "done": false,
+      "id": 4
     }
   ],
   "users": [
@@ -47,7 +53,7 @@
     {
       "userName": "dev",
       "email": "dev@gmail.com",
-      "password": "asd123",
+      "password": "123",
       "id": 5
     }
   ]

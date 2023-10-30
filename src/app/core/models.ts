@@ -6,7 +6,7 @@ export class Task implements ITask {
   description: string | null;
   done: boolean | null;
 
-  constructor(task: any) {
+  constructor(task?: any) {
     this.id = task.id != null ? task.id : null;
     this.priority = task.priority != null ? task.priority : null;
     this.description = task.description != null ? task.description : null;
@@ -20,10 +20,24 @@ export class User implements IUser {
   email: string | null;
   password: string | null;
 
-  constructor(user: any) {
-    this.id = user.id != null ? user.id : null;
-    this.username = user.username != null ? user.username : null;
-    this.email = user.email != null ? user.email : null;
-    this.password = user.password != null ? user.password : null;
-  }
+  constructor(user?: any) {
+      this.id = user.id != null ? user.id : null;
+      this.username = user.username != null ? user.username : null;
+      this.email = user.email != null ? user.email : null;
+      this.password = user.password != null ? user.password : null;
+    }
+
+    /* if (user) {
+      this.id = user.id != null ? user.id : null;
+      this.username = user.username != null ? user.username : null;
+      this.email = user.email != null ? user.email : null;
+      this.password = user.password != null ? user.password : null;
+    } else {
+      // Si 'user' es undefined, inicializa las propiedades a sus valores por defecto.
+      this.id = null;
+      this.username = null;
+      this.email = null;
+      this.password = null;
+    }
+  }*/
 }

@@ -1,1 +1,46 @@
-<p>tasks-view works!</p>
+<h4 class="mt-5">TAREAS</h4>
+<table class="table ml-5">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Prioridad</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let task of tasks;
+      let i = index
+      let isOdd = odd"
+      [ngClass]=" {'table-success': isOdd}">
+
+      <td class="text-center vertical-center"> {{ task.priority }} </td>
+      <td class="vertical-cemter"> {{ task.description }} </td>
+      <td class="text-center vertical-center"> {{ task.done }} </td>
+
+      <td class="text-center vertical-center">
+        <button
+          (click)="editTask( task! )"
+          class="btn btn-warning mx-2 btn-color small-icon">
+          <i class="fa-regular fa-pen-to-square "></i>
+        </button>
+       </td>
+
+      <td  class="text-center vertical-center">
+        <button
+          (click)="deleteTask( task.id! )"
+          class="btn btn-danger mx-2 small-icon vertical-center">
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- <ul class="list-group">
+  <li *ngIf="arregloCharacters.length === 0" class="list-group-item text-center bg-danger text-light"> <strong>¡LISTA VACIA!</strong></li>
+</ul> -->

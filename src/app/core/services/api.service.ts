@@ -25,7 +25,7 @@ export class ApiService {
 
   //! --------------------------------  TASKS  --------------------------------
   public getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(`${this.baseURL}/tasks?_sort=priority&_order=asc`);
+    return this.http.get<Task[]>(`${this.baseURL}/tasks?_sort=priority&_order=desc`);
   }
   /* NOTAS obtenidas por ChatGPT:
 
@@ -110,7 +110,7 @@ export class ApiService {
 
 
   public addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(`${this.baseURL}/tasks/${task.id}`, task);
+    return this.http.post<Task>(`${this.baseURL}/tasks`, task);
   }
 
   public updateTask(task: Task): Observable<Task> {
@@ -130,7 +130,6 @@ export class ApiService {
   // ! --------------------------------  USER  --------------------------------
   // 1° FORMA de hacer un get, propuesta por el profe Agus.. Aun no entiendo por que retorna el observable...
   public getToAuth(email: string, password: string): Observable<User[]> {
-    console.log(email, password);
     return this.http.get<User[]>(`${this.baseURL}/users?email=${email}&password=${password}`);
   }
 
